@@ -3,6 +3,9 @@ const body = document.body
 const cartBtnOpen = document.getElementById("cart-btn")
 const cartBtnClose = document.getElementById("close-cart")
 const cartContainer = document.getElementById("cart-container")
+const menuBtnOpen = document.getElementById ("menu-btn")
+const openMenu = document.getElementById("open-menu")
+const menuBtnClose = document.getElementById("close-menu")
 
 const darkThemeChange = () => {
 /*
@@ -145,5 +148,12 @@ window.addEventListener( "scroll", () =>{
         nav.classList.remove("scroll-bg")
     }
 } )
+
+menuBtnOpen.addEventListener( "click", () => openMenu.classList.remove("hide") )
+
+menuBtnClose.addEventListener( "click", () => openMenu.classList.add("hide"))
+
+
+
 
 

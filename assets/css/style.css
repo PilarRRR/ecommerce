@@ -161,6 +161,43 @@ section{
 
 
 
+.open-menu.hide{
+  left: -100%;
+}
+
+.open-menu{
+  background-color: rgba(109, 109, 109, 0.737);
+  width: 100%;
+  height: 100%;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 50;
+  transition: left .3s linear;
+  padding: 2.5rem 1.5rem 1rem 1.5rem;
+}
+
+.menu{
+  background-color: var(--container-color);
+  width: 100%;
+  height: 100%;
+  max-width: 400px;
+  position: absolute;
+  top: 0;
+  right: 0;
+  box-shadow: -4px 5px 10px rgb(147 147 147);
+  padding: 2.5rem 1.5rem 1rem 1.5rem ;
+}
+
+.menu-close{
+  position: absolute;
+  top: 1rem;
+  right: 1.5rem;
+}
+
+
+
+
 
 
 .new-arrivals{
@@ -228,4 +265,92 @@ color: white;
 width: 130px;
 height: 40px;
 box-shadow: none;
+}
+
+
+
+.products-show{
+  width: 100%;
+  display: flex;
+  flex-wrap: wrap;
+  padding: 0 0;
+  background-color: var(--body-color);
+  justify-content: space-between;
+  text-align: center;
+}
+
+.show{
+  width: 50%;
+
+}
+
+
+
+.sudaderas{
+  padding: 1rem 3rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  text-align: left;
+  align-items: center;
+  gap: 2rem;
+}
+
+.caja{
+  width: 15rem;
+  height: 15rem;
+  border-radius: 2rem;
+  position: relative;
+}
+
+.sudadera{
+  background-color: var(--card-color);
+  border-radius: 2rem 2rem 0 0;
+}
+
+#cart-add{
+  padding: 0.25rem;
+    background-color: var(--title-color);
+    color: var(--body-color);
+    border-radius: 50%;
+    width: 2rem;
+    height: 1.25rem;
+    font-size: 10px;
+    height: 2rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+    right: 30px;
+    top: 228px;
+}
+
+
+
+
+
+
+
+
+.footer{
+  background-color: lightgrey;
+  color: var(--title-color);
+
+}
+
+.footer.dark{
+  background-color: rgb(9, 9, 65);
+}
+
+.footer-tittle{
+  font-weight: bold;
+}
+
+.footer-element{
+  opacity: .5;
+}
+
+.social-media{
+  display: inline-flex;
+
 }
