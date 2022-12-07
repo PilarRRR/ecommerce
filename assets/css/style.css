@@ -293,8 +293,7 @@ box-shadow: none;
   justify-content: center;
   text-align: left;
   align-items: center;
-  gap: 2rem;
-  
+  gap: 2rem;  
 }
 
 .caja{
@@ -308,21 +307,23 @@ box-shadow: none;
   border-radius: 2rem 2rem 0 0;
 }
 
-#cart-add{
+.agregar{
   padding: 0.25rem;
   background-color: var(--container-color);
-  color: var(--body-color);
+  color: var(--button-color);
   border-radius: 50%;
   width: 2rem;
   height: 1.25rem;
-  font-size: 10px;
+  font-size: 1.5rem;
   height: 2rem;
   display: flex;
   justify-content: center;
   align-items: center;
-  position: relative;
-  left: 180px;
-  top: 15px;
+  bottom: calc(100% - 75%);
+  /* position: relative; */
+  /* left: 180px;
+  top: 15px; */
+  box-shadow:  0 8px 16px 0 rgba(0, 0, 0, 0.3), 0 6px 20px 0 rgba(0, 0, 0, 0.6);
 }
 
 
