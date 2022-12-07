@@ -287,13 +287,15 @@ box-shadow: none;
 
 
 .sudaderas{
+  width: 100%;
   padding: 4rem 1.5rem;
   display: flex;
   flex-direction: column;
   justify-content: center;
   text-align: left;
   align-items: center;
-  gap: 2rem;  
+  gap: 2rem;
+  
 }
 
 .caja{
@@ -305,12 +307,12 @@ box-shadow: none;
 .sudadera{
   background-color: var(--card-color);
   border-radius: 2rem 2rem 0 0;
+  box-shadow:  0 8px 16px 0 rgba(0, 0, 0, 0.3), 0 6px 20px 0 rgba(0, 0, 0, 0.6);
 }
 
 .agregar{
   padding: 0.25rem;
   background-color: var(--container-color);
-  color: var(--button-color);
   border-radius: 50%;
   width: 2rem;
   height: 1.25rem;
