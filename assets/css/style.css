@@ -214,40 +214,22 @@ align-items: flex-end;
 }
 
 .white-container{
-  position: absolute;
-  display: grid;
-  justify-content: center;
-  align-content: center;
-  grid-template-columns: 1fr;
-  grid-template-rows: 2fr;
-  max-width: 280px;
-  height: 450px;
-  top: -90px;
-  right: 0;
-  align-self: flex-end;
   background-color: var(--first-color);
+  width: 80%;
+  height: 30%;
+
 }
 
 .new-sweatshirt{
-  position: absolute;
-  display: grid;
-  justify-content: center;
-  align-content: center;
-  grid-template-columns: 1fr;
-  grid-template-rows: 2fr;
-  max-width: 280px;
-  height: 450px;
-  top: -90px;
-  right: 0;
-  align-self: flex-end;
   background-color: var(--first-color);
+    width: 80%;
+    height: 70%;
 }
 
 .new-image{
+  background-color: var(--first-color); 
   width: 100%;
-  grid-row: 2/2;
-  padding: 1.5rem;
-  object-fit: cover;
+  height: 100%;
 }
 
 .new-collection h1{
