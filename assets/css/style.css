@@ -273,8 +273,8 @@ box-shadow: none;
   width: 100%;
   display: flex;
   flex-wrap: wrap;
-  padding: 0 0;
-  background-color: var(--body-color);
+  padding: 2rem 1.5rem;
+  background-color: var(--container-color);
   justify-content: space-between;
   text-align: center;
 }
@@ -287,20 +287,20 @@ box-shadow: none;
 
 
 .sudaderas{
-  padding: 1rem 3rem;
+  padding: 4rem 1.5rem;
   display: flex;
   flex-direction: column;
   justify-content: center;
   text-align: left;
   align-items: center;
   gap: 2rem;
+  
 }
 
 .caja{
   width: 15rem;
   height: 15rem;
   border-radius: 2rem;
-  position: relative;
 }
 
 .sudadera{
@@ -310,19 +310,19 @@ box-shadow: none;
 
 #cart-add{
   padding: 0.25rem;
-    background-color: var(--title-color);
-    color: var(--body-color);
-    border-radius: 50%;
-    width: 2rem;
-    height: 1.25rem;
-    font-size: 10px;
-    height: 2rem;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    position: absolute;
-    right: 30px;
-    top: 228px;
+  background-color: var(--container-color);
+  color: var(--body-color);
+  border-radius: 50%;
+  width: 2rem;
+  height: 1.25rem;
+  font-size: 10px;
+  height: 2rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  left: 180px;
+  top: 15px;
 }
 
 
@@ -335,7 +335,6 @@ box-shadow: none;
 .footer{
   background-color: lightgrey;
   color: var(--title-color);
-
 }
 
 .footer.dark{
