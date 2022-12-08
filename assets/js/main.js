@@ -10,6 +10,8 @@ const cartCounter = document.getElementById("cart-counter")
 const cartAdd1 = document.getElementById("cart-add-1")
 const cartAdd2 = document.getElementById("cart-add-2")
 const cartAdd3 = document.getElementById("cart-add-3")
+const cartAdd0 = document.getElementById("cart-add-0")
+const discoverBtn = document.getElementById("discover-btn")
 
 const darkThemeChange = () => {
 /*
@@ -40,7 +42,8 @@ cartBtnClose.addEventListener( "click", () => cartContainer.classList.add("hide"
 cartAdd1.addEventListener("click", () => addProduct(1));
 cartAdd2.addEventListener("click", () => addProduct(2));
 cartAdd3.addEventListener("click", () => addProduct(3));
-
+cartAdd0.addEventListener("click", () => addProduct(2));
+discoverBtn.addEventListener("click", () => window.scrollTo(0, 800));
 
 const items = [
     {
