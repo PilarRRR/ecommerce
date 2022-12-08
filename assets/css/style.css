@@ -67,7 +67,6 @@ img {
 	padding: 1rem 1.5rem;
 	justify-content: space-between;
 	align-items: center;
-	box-shadow: 0 1px 4px hsl(0deg 4% 15% / 10%);
 	color: var(--title-color);
 	position: fixed;
 	width: 100%;
@@ -86,11 +85,6 @@ img {
 	display: flex;
 	gap: 1rem;
 	align-items: center;
-}
-
-main {
-	padding: 1.5rem;
-	padding-top: 0;
 }
 
 h2 {
@@ -192,7 +186,7 @@ section {
 }
 
 .new-arrivals {
-	padding-right: 0;
+	padding: 0;
 }
 
 .new-container {
@@ -213,13 +207,21 @@ section {
 .new-sweatshirt {
 	background-color: var(--first-color);
 	width: 80%;
-	height: 70%;
+  max-width: 360px;
+	height: 100%;
+  display: flex;
+  align-items: flex-end;
+  padding-bottom: 16px;
 }
 
 .new-image {
 	background-color: var(--first-color);
 	width: 100%;
-	height: 100%;
+	height: 70%;
+}
+
+.new-arrival-details {
+  padding: 16px;
 }
 
 .new-collection h1 {
@@ -230,6 +232,7 @@ section {
 
 .new-collection h3 {
 	font-size: 16px;
+  margin: 16px 0;
 	color: hsl(0, 0%, 35%);
 }
 
@@ -238,23 +241,25 @@ section {
 }
 
 .new-buttons {
-	display: inline-block;
+	display: flex;
+  align-items: center;
+  margin: 16px 0;
 }
 
 .discover {
 	background-color: hsl(0, 0%, 60%);
+  border: 0px;
 	width: 80px;
 	height: 30px;
-	border-color: hsl(0, 0%, 60%);
-	box-shadow: none;
 }
 
 .add-cart {
 	background-color: hsl(0, 0%, 17%);
+  border: 0px;
 	color: white;
 	width: 130px;
 	height: 40px;
-	box-shadow: none;
+  box-shadow: -4px 4px 8px #6a6a6a69;
 }
 
 .products-show {
@@ -265,10 +270,13 @@ section {
 	background-color: var(--container-color);
 	justify-content: space-between;
 	text-align: center;
+  gap: 32px 0px;
 }
 
 .show {
 	width: 50%;
+  display: flex;
+  flex-direction: column;
 }
 
 .sudaderas {
@@ -283,15 +291,21 @@ section {
 }
 
 .caja {
+  display: flex;
+  flex-direction: column;
 	width: 15rem;
-	height: 15rem;
-	border-radius: 2rem;
+	height: 20rem;
+	border-radius: 1rem;
+  background-color: rgb(250, 250, 250);
 }
 
 .sudadera {
 	background-color: var(--card-color);
-	border-radius: 2rem 2rem 0 0;
-	box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.3), 0 6px 20px 0 rgba(0, 0, 0, 0.6);
+  width: 100%;
+  border-radius: 16px 16px 0px 0px;
+}
+
+.sudadera-text {
 }
 
 .agregar {
@@ -306,7 +320,7 @@ section {
 	justify-content: center;
 	align-items: center;
 	bottom: calc(100% - 75%);
-	/* position: relative; */
+	position: relative;
 	/* left: 180px;
   top: 15px; */
 	box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.3), 0 6px 20px 0 rgba(0, 0, 0, 0.6);
