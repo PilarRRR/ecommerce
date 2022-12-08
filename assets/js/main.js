@@ -102,7 +102,6 @@ cartCounter.innerText = cartProducts.length;
 
 function addProduct( itemId ){
     let productSelected = items.find( product => product.id === itemId )
-    console.log(productSelected);
 
     if( productSelected ){
         const stock = productSelected.quantity;
@@ -123,9 +122,8 @@ function addProduct( itemId ){
         console.log('Error: Producto inexistente');
     }
 
-
-    console.log('cart: ', cartProducts);
     showProducts()
+    updateProductCounter()
 }
 
 
@@ -145,6 +143,20 @@ function showProducts (){
     content.innerHTML = fragment
 }
 
+/**
+ * @description Actualiza el contador de productos en el carrito
+ */
+function updateProductCounter() {
+    // Inicializa el contador en 0
+    let count = 0;
+    // Si hay productos en el carrito (en la variable con los elementos del carrito)
+    if(cartProducts) {
+        // Itera (con reduce) por los elementos del carrito y suma las cantidades y asignar al contados
+        count = cartProducts.reduce((prev, curr) => prev + curr.quantity, 0);
+    }
+    // Actualiza el texto del contador
+    cartCounter.textContent = count;
+}
 
 //document -> documento
 
