@@ -6,6 +6,10 @@ const cartContainer = document.getElementById("cart-container")
 const menuBtnOpen = document.getElementById ("menu-btn")
 const openMenu = document.getElementById("open-menu")
 const menuBtnClose = document.getElementById("close-menu")
+const cartCounter = document.getElementById("cart-counter")
+const cartAdd1 = document.getElementById("cart-add-1")
+const cartAdd2 = document.getElementById("cart-add-2")
+const cartAdd3 = document.getElementById("cart-add-3")
 
 const darkThemeChange = () => {
 /*
@@ -33,6 +37,9 @@ cartBtnOpen.addEventListener( "click", () => cartContainer.classList.remove("hid
 
 cartBtnClose.addEventListener( "click", () => cartContainer.classList.add("hide")  )
 
+cartAdd1.addEventListener("click", () => addProduct(1));
+cartAdd2.addEventListener("click", () => addProduct(2));
+cartAdd3.addEventListener("click", () => addProduct(3));
 
 
 const items = [
@@ -64,54 +71,60 @@ const items = [
 
 
 
-const cartProducts = [  {
-    id: 3,
-    name: 'Sweatshirts',
-    price: 24.00,
-    image: 'assets/images/featured3.png',
-    category: 'sweatshirts',
-    quantity: 20
-  },
-  {
-    id: 3,
-    name: 'Gorra',
-    price: 24.00,
-    image: 'assets/images/featured3.png',
-    category: 'sweatshirts',
-    quantity: 20
-  },
-  {
-    id: 3,
-    name: 'sudadera',
-    price: 24.00,
-    image: 'assets/images/featured3.png',
-    category: 'sweatshirts',
-    quantity: 20
-  } ]
+// const cartProducts = [  {
+//     id: 3,
+//     name: 'Sweatshirts',
+//     price: 24.00,
+//     image: 'assets/images/featured3.png',
+//     category: 'sweatshirts',
+//     quantity: 20
+//   },
+//   {
+//     id: 3,
+//     name: 'Gorra',
+//     price: 24.00,
+//     image: 'assets/images/featured3.png',
+//     category: 'sweatshirts',
+//     quantity: 20
+//   },
+//   {
+//     id: 3,
+//     name: 'sudadera',
+//     price: 24.00,
+//     image: 'assets/images/featured3.png',
+//     category: 'sweatshirts',
+//     quantity: 20
+//   } ]
+const cartProducts = []
+
+cartCounter.innerText = cartProducts.length;
 
 
 function addProduct( itemId ){
-
-    let productSelected = cartProducts.find( product => product.id === itemId )
-
+    let productSelected = items.find( product => product.id === itemId )
+    console.log(productSelected);
 
     if( productSelected ){
+        const stock = productSelected.quantity;
+        const cartProductIndex = cartProducts.findIndex(product => product.id == itemId);
+        // Si existe en el carrito
+        if(cartProductIndex != -1) {
+            // Si no ha rebasado el stock
+            if(cartProducts[cartProductIndex].quantity < stock) {
+                cartProducts[cartProductIndex].quantity++;
+            }
+        } else {
+            const newCartProduct = {...productSelected, quantity: 1};
+            cartProducts.push(newCartProduct);
+        }
 
-        //Condicion para saber si aun pueden seleccionar mas productos de ese tipo
-        let index = cartProducts.indexOf( productSelected )
-
-        cartProducts[index].quantitySelected++
         
     }else{
-        
-        const item = items.find( item => item.id === itemId )
-        
-        item.quantitySelected = 1
-        cartProducts.push( item )
+        console.log('Error: Producto inexistente');
     }
 
 
-
+    console.log('cart: ', cartProducts);
     showProducts()
 }
 
@@ -124,9 +137,7 @@ function showProducts (){
         fragment += `
         <section>
             <h2>${product.name}</h2>
-            <p>
-                Lorem ipsum dolor sit amet consectetur adipisicing elit. Esse eveniet provident optio dolorem? Est accusantium quos consequuntur aliquam quia ad?
-            </p>
+            <p>Cantidad: ${product.quantity}</p>
         </section>
         `
     } )
