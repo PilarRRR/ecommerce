@@ -1,22 +1,22 @@
 /*=============== GOOGLE FONTS ===============*/
-@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap");
 
 /*=============== VARIABLES CSS ===============*/
 :root {
-	/*========== Colors ==========*/
-	--first-color: hsl(354, 78%, 60%);
-	--button-color: hsl(0, 0%, 17%);
-	--button-color-alt: hsl(0, 0%, 21%);
-	--card-color: hsl(0, 0%, 90%);
-	--title-color: hsl(0, 0%, 15%);
-	--text-color: hsl(0, 0%, 35%);
-	--text-color-light: hsl(0, 0%, 55%);
-	--body-color: hsl(206, 4%, 97%);
-	--container-color: #fff;
-	--border-color: hsl(0, 0%, 94%);
+    /*========== Colors ==========*/
+    --first-color: hsl(354, 78%, 60%);
+    --button-color: hsl(0, 0%, 17%);
+    --button-color-alt: hsl(0, 0%, 21%);
+    --card-color: hsl(0, 0%, 90%);
+    --title-color: hsl(0, 0%, 15%);
+    --text-color: hsl(0, 0%, 35%);
+    --text-color-light: hsl(0, 0%, 55%);
+    --body-color: hsl(206, 4%, 97%);
+    --container-color: #fff;
+    --border-color: hsl(0, 0%, 94%);
 
-	/*========== Font and typography ==========*/
-	--body-font: 'Roboto', sans-serif;
+    /*========== Font and typography ==========*/
+    --body-font: "Roboto", sans-serif;
 }
 
 /*=============== THEME ===============*/
@@ -34,315 +34,327 @@
 */
 
 * {
-	margin: 0;
-	padding: 0;
-	box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
 }
 
 body {
-	font-family: var(--body-font);
-	background-color: var(--body-color);
-	color: var(--text-color);
+    font-family: var(--body-font);
+    background-color: var(--body-color);
+    color: var(--text-color);
 }
 
 body.dark {
-	--first-color: hsl(182, 53%, 74%);
-	--button-color: hsl(246, 16%, 12%);
-	--button-color-alt: hsl(0, 0%, 28%);
-	--card-color: hsla(246, 16%, 5%, 0.5);
-	--title-color: hsl(0, 0%, 95%);
-	--text-color: hsl(0, 0%, 75%);
-	--body-color: hsl(249, 19%, 14%);
-	--container-color: hsl(246, 16%, 12%);
-	--border-color: hsl(0, 0%, 20%);
+    --first-color: hsl(182, 53%, 74%);
+    --button-color: hsl(246, 16%, 12%);
+    --button-color-alt: hsl(0, 0%, 28%);
+    --card-color: hsla(246, 16%, 5%, 0.5);
+    --title-color: hsl(0, 0%, 95%);
+    --text-color: hsl(0, 0%, 75%);
+    --body-color: hsl(249, 19%, 14%);
+    --container-color: hsl(246, 16%, 12%);
+    --border-color: hsl(0, 0%, 20%);
 }
 
 img {
-	max-width: 100%;
-	display: block;
+    max-width: 100%;
+    display: block;
 }
 
 .navbar {
-	display: flex;
-	padding: 1rem 1.5rem;
-	justify-content: space-between;
-	align-items: center;
-	color: var(--title-color);
-	position: fixed;
-	width: 100%;
+    display: flex;
+    padding: 1rem 1.5rem;
+    justify-content: space-between;
+    align-items: center;
+    color: var(--title-color);
+    position: fixed;
+    width: 100%;
+    z-index: 100;
 }
 
 .navbar.scroll-bg {
-	background-color: darkcyan;
+    background-color: darkcyan;
 }
 
 .nav-logo {
-	width: 50px;
-	fill: var(--title-color);
+    width: 50px;
+    fill: var(--title-color);
 }
 
 .icons-wrapper {
-	display: flex;
-	gap: 1rem;
-	align-items: center;
+    display: flex;
+    gap: 1rem;
+    align-items: center;
 }
 
 h2 {
-	color: var(--title-color);
+    color: var(--title-color);
 }
 
 section {
-	padding: 0rem 1.5rem;
-	background-color: var(--container-color);
+    padding: 0rem 1.5rem;
+    background-color: var(--container-color);
 }
 
 .cart-container {
-	background-color: rgba(109, 109, 109, 0.737);
-	width: 100%;
-	height: 100%;
-	position: fixed;
-	top: 0;
-	left: 0;
-	z-index: 50;
-	transition: left 0.3s linear;
-	padding: 2.5rem 1.5rem 1rem 1.5rem;
+    background-color: rgba(109, 109, 109, 0.737);
+    width: 100%;
+    height: 100%;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 101;
+    transition: left 0.3s linear;
+    padding: 2.5rem 1.5rem 1rem 1.5rem;
 }
 
 .cart-container.hide {
-	left: -100%;
+    left: -100%;
 }
 
 .cart {
-	background-color: var(--container-color);
-	width: 100%;
-	height: 100%;
-	max-width: 400px;
-	position: absolute;
-	top: 0;
-	right: 0;
-	box-shadow: -4px 5px 10px rgb(147 147 147);
-	padding: 2.5rem 1.5rem 1rem 1.5rem;
+    background-color: var(--container-color);
+    width: 100%;
+    height: 100%;
+    max-width: 400px;
+    position: absolute;
+    top: 0;
+    right: 0;
+    box-shadow: -4px 5px 10px rgb(147 147 147);
+    padding: 2.5rem 1.5rem 1rem 1.5rem;
 }
 
 .cart-close {
-	position: absolute;
-	top: 1rem;
-	right: 1.5rem;
+    position: absolute;
+    top: 1rem;
+    right: 1.5rem;
 }
 
 .cart-shop {
-	position: relative;
+    position: relative;
 }
 
 .cart-counter {
-	padding: 0.25rem;
-	background-color: var(--title-color);
-	color: var(--body-color);
-	border-radius: 50%;
-	width: 1.25rem;
-	height: 1.25rem;
-	font-size: 10px;
-	height: 1.25rem;
-	display: flex;
-	justify-content: center;
-	align-items: center;
-	position: absolute;
-	bottom: -8px;
-	right: -8px;
+    padding: 0.25rem;
+    background-color: var(--title-color);
+    color: var(--body-color);
+    border-radius: 50%;
+    width: 1.25rem;
+    height: 1.25rem;
+    font-size: 10px;
+    height: 1.25rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+    bottom: -8px;
+    right: -8px;
 }
 
 .open-menu.hide {
-	left: -100%;
+    left: -100%;
 }
 
 .open-menu {
-	background-color: rgba(109, 109, 109, 0.737);
-	width: 100%;
-	height: 100%;
-	position: fixed;
-	top: 0;
-	left: 0;
-	z-index: 50;
-	transition: left 0.3s linear;
-	padding: 2.5rem 1.5rem 1rem 1.5rem;
+    background-color: rgba(109, 109, 109, 0.737);
+    width: 100%;
+    height: 100%;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 101;
+    transition: left 0.3s linear;
+    padding: 2.5rem 1.5rem 1rem 1.5rem;
 }
 
 .menu {
-	background-color: var(--container-color);
-	width: 100%;
-	height: 100%;
-	max-width: 400px;
-	position: absolute;
-	top: 0;
-	right: 0;
-	box-shadow: -4px 5px 10px rgb(147 147 147);
-	padding: 2.5rem 1.5rem 1rem 1.5rem;
+    background-color: var(--container-color);
+    width: 100%;
+    height: 100%;
+    max-width: 400px;
+    position: absolute;
+    top: 0;
+    right: 0;
+    box-shadow: -4px 5px 10px rgb(147 147 147);
+    padding: 2.5rem 1.5rem 1rem 1.5rem;
 }
 
 .menu-close {
-	position: absolute;
-	top: 1rem;
-	right: 1.5rem;
+    position: absolute;
+    top: 1rem;
+    right: 1.5rem;
 }
 
 .new-arrivals {
-	padding: 0;
+    padding: 0;
 }
 
 .new-container {
-	height: 25rem;
-	padding-right: 0;
-	display: flex;
-	flex-direction: column;
-	justify-content: end;
-	align-items: flex-end;
+    height: 25rem;
+    padding-right: 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: end;
+    align-items: flex-end;
 }
 
 .white-container {
-	background-color: var(--first-color);
-	width: 80%;
-	height: 30%;
+    background-color: var(--first-color);
+    width: 80%;
+    height: 30%;
 }
 
 .new-sweatshirt {
-	background-color: var(--first-color);
-	width: 80%;
-  max-width: 360px;
-	height: 100%;
-  display: flex;
-  align-items: flex-end;
-  padding-bottom: 16px;
+    background-color: var(--first-color);
+    width: 80%;
+    max-width: 360px;
+    height: 100%;
+    display: flex;
+    align-items: flex-end;
+    padding-bottom: 16px;
 }
 
 .new-image {
-	background-color: var(--first-color);
-	width: 100%;
-	height: 70%;
+    background-color: var(--first-color);
+    width: 100%;
+    height: 70%;
 }
 
 .new-arrival-details {
-  padding: 16px;
+    padding: 16px;
 }
 
 .new-collection h1 {
-	font-size: 30px;
-	font-style: bold;
-	color: hsl(0, 0%, 15%);
+    font-size: 30px;
+    font-style: bold;
+    color: hsl(0, 0%, 15%);
 }
 
 .new-collection h3 {
-	font-size: 16px;
-  margin: 16px 0;
-	color: hsl(0, 0%, 35%);
+    font-size: 16px;
+    margin: 16px 0;
+    color: hsl(0, 0%, 35%);
 }
 
 .price h2 {
-	color: hsl(354, 78%, 60%);
+    color: hsl(354, 78%, 60%);
 }
 
 .new-buttons {
-	display: flex;
-  align-items: center;
-  margin: 16px 0;
+    display: flex;
+    align-items: center;
+    margin: 16px 0;
 }
 
 .discover {
-	background-color: hsl(0, 0%, 60%);
-  border: 0px;
-	width: 80px;
-	height: 30px;
+    background-color: hsl(0, 0%, 60%);
+    border: 0px;
+    width: 80px;
+    height: 30px;
 }
 
 .add-cart {
-	background-color: hsl(0, 0%, 17%);
-  border: 0px;
-	color: white;
-	width: 130px;
-	height: 40px;
-  box-shadow: -4px 4px 8px #6a6a6a69;
+    background-color: hsl(0, 0%, 17%);
+    border: 0px;
+    color: white;
+    width: 130px;
+    height: 40px;
+    box-shadow: -4px 4px 8px #6a6a6a69;
 }
 
 .products-show {
-	width: 100%;
-	display: flex;
-	flex-wrap: wrap;
-	padding: 2rem 1.5rem;
-	background-color: var(--container-color);
-	justify-content: space-between;
-	text-align: center;
-  gap: 32px 0px;
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    padding: 2rem 1.5rem;
+    background-color: var(--container-color);
+    justify-content: space-between;
+    text-align: center;
+    gap: 32px 0px;
 }
 
 .show {
-	width: 50%;
-  display: flex;
-  flex-direction: column;
+    width: 50%;
+    display: flex;
+    flex-direction: column;
 }
 
 .sudaderas {
-	width: 100%;
-	padding: 4rem 1.5rem;
-	display: flex;
-	flex-direction: column;
-	justify-content: center;
-	text-align: left;
-	align-items: center;
-	gap: 2rem;
+    width: 100%;
+    padding: 4rem 1.5rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    text-align: left;
+    align-items: center;
+    gap: 2rem;
 }
 
 .caja {
-  display: flex;
-  flex-direction: column;
-	width: 15rem;
-	height: 20rem;
-	border-radius: 1rem;
-  background-color: rgb(250, 250, 250);
+    display: flex;
+    flex-direction: column;
+    width: 15rem;
+    height: 20rem;
+    border-radius: 1rem;
+    background-color: rgb(250, 250, 250);
+}
+
+.card {
+    height: 100%;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
 }
 
 .sudadera {
-	background-color: var(--card-color);
-  width: 100%;
-  border-radius: 16px 16px 0px 0px;
+    background-color: var(--card-color);
+    width: 100%;
+    border-radius: 16px 16px 0px 0px;
 }
 
 .sudadera-text {
+    padding: 20px;
 }
 
 .agregar {
-	padding: 0.25rem;
-	background-color: var(--container-color);
-	border-radius: 50%;
-	width: 2rem;
-	height: 1.25rem;
-	font-size: 1.5rem;
-	height: 2rem;
-	display: flex;
-	justify-content: center;
-	align-items: center;
-	bottom: calc(100% - 75%);
-	position: relative;
-	/* left: 180px;
+    padding: 0.25rem;
+    background-color: var(--container-color);
+    border-radius: 50%;
+    width: 2.4rem;
+    font-size: 1.5rem;
+    height: 3rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    bottom: calc(100% - 75%);
+    position: relative;
+    left: 180px;
+    bottom: 90px;
+    /* left: 180px;
   top: 15px; */
-	box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.3), 0 6px 20px 0 rgba(0, 0, 0, 0.6);
+    box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.3),
+        0 6px 20px 0 rgba(138, 138, 138, 0.6);
 }
 
 .footer {
-	background-color: lightgrey;
-	color: var(--title-color);
+    background-color: lightgrey;
+    color: var(--title-color);
+    padding: 40px;
 }
 
 .footer.dark {
-	background-color: rgb(9, 9, 65);
+    background-color: rgb(9, 9, 65);
 }
 
 .footer-tittle {
-	font-weight: bold;
+    font-weight: bold;
 }
 
 .footer-element {
-	opacity: 0.5;
+    opacity: 0.5;
 }
 
 .social-media {
-	display: inline-flex;
+    display: inline-flex;
 }
