@@ -69,61 +69,35 @@ const items = [
     }
   ]
 
-
-
-// const cartProducts = [  {
-//     id: 3,
-//     name: 'Sweatshirts',
-//     price: 24.00,
-//     image: 'assets/images/featured3.png',
-//     category: 'sweatshirts',
-//     quantity: 20
-//   },
-//   {
-//     id: 3,
-//     name: 'Gorra',
-//     price: 24.00,
-//     image: 'assets/images/featured3.png',
-//     category: 'sweatshirts',
-//     quantity: 20
-//   },
-//   {
-//     id: 3,
-//     name: 'sudadera',
-//     price: 24.00,
-//     image: 'assets/images/featured3.png',
-//     category: 'sweatshirts',
-//     quantity: 20
-//   } ]
 const cartProducts = []
 
 cartCounter.innerText = cartProducts.length;
 
-
+/**
+ * @description Agrega un producto al carrito
+ * @param {*} itemId Id del producto que se agregará al carrito
+ */
 function addProduct( itemId ){
-    let productSelected = items.find( product => product.id === itemId )
-
-    if( productSelected ){
-        const stock = productSelected.quantity;
-        const cartProductIndex = cartProducts.findIndex(product => product.id == itemId);
-        // Si existe en el carrito
-        if(cartProductIndex != -1) {
-            // Si no ha rebasado el stock
-            if(cartProducts[cartProductIndex].quantity < stock) {
-                cartProducts[cartProductIndex].quantity++;
-            }
-        } else {
-            const newCartProduct = {...productSelected, quantity: 1};
-            cartProducts.push(newCartProduct);
+    const productSelected = items.find(product => product.id === itemId);
+    const stock = productSelected.quantity;
+    const cartProductIndex = cartProducts.findIndex(product => product.id == itemId);
+    // Si existe en el carrito
+    if(cartProductIndex != -1) {
+        // Si no ha rebasado el stock
+        if(cartProducts[cartProductIndex].quantity < stock) {
+            // Aumenta la cantidad del producto en el carrito
+            cartProducts[cartProductIndex].quantity++;
         }
-
-        
-    }else{
-        console.log('Error: Producto inexistente');
+    } else {
+        // Crea una copia del producto seleccionado cambiando la cantidad (a 1)
+        const newCartProduct = {...productSelected, quantity: 1};
+        // Agrega el producto al carrito
+        cartProducts.push(newCartProduct);
     }
-
-    showProducts()
-    updateProductCounter()
+    // Actualiza la vista de productos en el carrito
+    showProducts();
+    // Actualiza el contador de productos en el carrito
+    updateProductCounter();
 }
 
 
