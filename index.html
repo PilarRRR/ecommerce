@@ -1,205 +1,215 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="shortcut icon" href="./assets/images/favicon.png">
-    <title>Academlo Store | Home</title>
-    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
-    <link rel="stylesheet" href="./assets/css/style.css">
-    
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="shortcut icon" href="./assets/images/favicon.png">
+  <title>Academlo Store | Home</title>
+  <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+  <link rel="stylesheet" href="./assets/css/style.css">
+
 
 </head>
-<body>
-    <header>
-        <nav class="navbar">
-            <svg class="nav-logo" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 48.92 56.48">
-                <title>Academlo Logo</title>
-                <g>
-                  <g>
-                    <path
-                      d="M28.58,15.39H25.16L35.78,36H31.49L20.67,15.71,8.23,38.82H18.94l3-5.43h-3.4l-1.47,2.54h-4l2.69-5.09H25.85l4.28,8H40.67ZM17.23,28.21l3.57-6.6,3.57,6.6Z">
-                    </path>
-                  </g>
-                </g>
-            </svg>
-    
-            <div class="icons-wrapper">
-                <i class='bx bx-sun bx-sm' id="theme-btn"></i>
-    
-                <div class="cart-shop" id="cart-btn">
-                    <i class='bx bx-shopping-bag bx-sm' ></i>
-                    <span class="cart-counter" id="cart-counter">0</span>
-                </div>
-    
-                <i class='bx bx-grid-alt bx-sm' id="menu-btn" ></i>
-            </div>
-        </nav>
-    </header>
 
-    <section>
+<body>
+  <!-- Header -->
+  <header>
+    <!-- Navbar -->
+    <nav class="navbar">
+      <!-- Logo -->
+      <svg class="nav-logo" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 48.92 56.48">
+        <title>Academlo Logo</title>
+        <g>
+          <g>
+            <path
+              d="M28.58,15.39H25.16L35.78,36H31.49L20.67,15.71,8.23,38.82H18.94l3-5.43h-3.4l-1.47,2.54h-4l2.69-5.09H25.85l4.28,8H40.67ZM17.23,28.21l3.57-6.6,3.57,6.6Z">
+            </path>
+          </g>
+        </g>
+      </svg>
+      <!-- Buttons -->
+      <div class="icons-wrapper">
+        <!-- Sun icon -->
+        <i class='bx bx-sun bx-sm' id="theme-btn"></i>
+        <!-- Bag -->
+        <div class="cart-shop" id="cart-btn">
+          <!-- Bag icon -->
+          <i class='bx bx-shopping-bag bx-sm'></i>
+          <!-- Bag products counter -->
+          <span class="cart-counter" id="cart-counter">0</span>
+        </div>
+        <!-- Menu icon -->
+        <i class='bx bx-grid-alt bx-sm' id="menu-btn"></i>
+      </div>
+    </nav>
+  </header>
+  <!-- Menu -->
+  <section>
     <div class="open-menu hide" id="open-menu">
       <div class="menu" id="menu">
-          <div class="menu-close" id="close-menu">
-              <i class='bx bx-x bx-md'></i>
-          </div>
-  
-      </div>
-    </section>
-
-    <main>
-        <section class="new-arrivals">
-          <div class="new-container">
-            <div class="white-container">
-                         
-            </div>
-            <div class="new-sweatshirt">
-              <img class="new-image" src="./assets/images/featured2.png" alt="Sudadera negra">
-            </div>
-          </div>
-          
-          <div class="new-collection">
-            <h1>
-              New Sweatshirt 
-              <br>
-              <span>
-                COLLECTIONS 2022
-              </span>
-            </h1>
-            <br>
-            <h3>
-              Latest arrival of the new Hanes Midweight Crewneck sweatshirt imported from 2022 series with a modern design.
-            </h3>
-          </div>
-          <br>
-          <div class="price">
-            <h2>
-              $14.00
-            </h2>
-          </div>
-          <br>
-          <div class="new-buttons">
-            <button class="discover">
-              Discover
-            </button>
-            <button class="add-cart">
-              ADD TO CART
-            </button>
-
-          </div>
-        </section>
-    </main>
-    
-
-
-    <section class="products-show">
-      <div class="show">
-        <span> Show all </span><br>show all products
-      </div>
-      
-      <div class="show">
-        <span> Hoodies </span> <br> 3 products
-      </div>
-     
-      <div class="show">
-        <span> Shirts </span> <br> 4 products
-      </div>
-      
-      <div class="show">
-        <span> Sweatshirts </span> <br> 4 products
-      </div>
-    </section>
-    <section class="sudaderas">
-      <div class="caja">
-          <div class="sudadera">
-              <img src="./assets/images/featured1.png" alt="rojo">
-              <span class="agregar" id="cart-add">+</span>
-          </div>
-          <br>
-          <div class="text">
-            <h4>$14.00 <span class="stock" >Stock: 1</span></h4>
-            <h5>Hoodies</h5>
-          </div>
-          <br>
-      </div>
-      <br>
-      <br>
-      <div class="caja">
-          <div class="sudadera">
-            <img src="./assets/images/featured2.png" alt="negro">
-            <span class="agregar" id="cart-add">+</span>          
-          </div>
-          <br>
-          <div class="text">
-            <h4>$14.00 <span class="stock">Stock: 1</span></h4>
-            <h5>Hoodies</h5>
-          </div>
-      </div>
-      <br>
-      <br>
-      <div class="caja">
-          <div class="sudadera">
-            <img src="./assets/images/featured3.png" alt="blanco">
-            <span class="agregar" id="cart-add">+</span>
-          </div>
-          <br>
-          <div class="text">
-            <h4>$14.00 <span class="stock" >Stock: 1</span></h4>
-            <h5>Hoodies</h5>
-          </div>
-      </div>
-    </section>
-
-
-
-    
-    <div class="cart-container hide" id="cart-container">
-        <div class="cart" id="cart">
-            <div class="cart-close" id="close-cart">
-                <i class='bx bx-x bx-md'></i>
-            </div>
-
-            <div id="cart-content">
-
-            </div>
+        <div class="menu-close" id="close-menu">
+          <i class='bx bx-x bx-md'></i>
         </div>
+      </div>
+  </section>
+  <!-- Landing -->
+  <main>
+    <!-- New Arrival -->
+    <section class="new-arrivals">0
+      <div class="new-container">
+        <!-- White container ? -->
+        <div class="white-container">
+        </div>
+        <!-- Img: new product -->
+        <div class="new-sweatshirt">
+          <img class="new-image" src="./assets/images/featured2.png" alt="Sudadera negra">
+        </div>
+      </div>
+      <!-- New Arrival -->
+      <div class="new-collection">
+        <!-- Title -->
+        <h1>
+          New Sweatshirt
+          <br>
+          <!-- Collection -->
+          <span>
+            COLLECTIONS 2022
+          </span>
+        </h1>
+        <br>
+        <!-- Description -->
+        <h3>
+          Latest arrival of the new Hanes Midweight Crewneck sweatshirt imported from 2022 series with a modern design.
+        </h3>
+      </div>
+      <br>
+      <!-- Price -->
+      <div class="price">
+        <h2>
+          $14.00
+        </h2>
+      </div>
+      <br>
+      <!-- Product actions buttons -->
+      <div class="new-buttons">
+        <button class="discover">
+          Discover
+        </button>
+        <button class="add-cart">
+          ADD TO CART
+        </button>
+
+      </div>
+    </section>
+  </main>
+  <!-- Sections -->
+  <section class="products-show">
+    <!-- Btn: All sections -->
+    <div class="show">
+      <span> Show all </span><br>show all products
     </div>
-    <div class="footer">
-      <footer>
-          <h4 class="footer-tittle"> Our Information </h4>
-          <br>
-          <h5 class="footer-element"> Puebla-México </h5>
-          <br>
-          <h4 class="footer-tittle"> About Us </h4>
-          <br>
-          <h5 class="footer-element"> Support Center </h5>
-          <br>
-          <h5 class="footer-element"> Customer Support </h5>
-          <br>
-          <h5 class="footer-element"> About Us </h5>
-          <br>
-          <h5 class="footer-element"> Copyrigth </h5>
-          <br>
-          <h4 class="footer-tittle"> Product </h4>
-          <br>
-          <h5 class="footer-element"> Hoodies </h5>
-          <br>
-          <h5 class="footer-element"> Shirts </h5>
-          <br>
-          <h5 class="footer-element"> Sweatshirts </h5>
-          <br>
-          <h4 class="footer-tittle"> Social </h4>
-          <br>
-          <div class="social-media">
-              <a href="http://www.instagram.com"><img src="./assets/logos/instagram.svg" > </a>
-              <a href="http://www.twitter.com"><img src="./assets/logos/twitter.svg" > </a>
-          </div>
-          
-      </footer>
+    <!-- Btn: Hoodies section -->
+    <div class="show">
+      <span> Hoodies </span> <br> 3 products
+    </div>
+    <!-- Btn: Shirts section -->
+    <div class="show">
+      <span> Shirts </span> <br> 4 products
+    </div>
+    <!-- Btn: Sweatshirts section -->
+    <div class="show">
+      <span> Sweatshirts </span> <br> 4 products
+    </div>
+  </section>
+  <!-- Hoodies Section -->
+  <section class="sudaderas">
+    <div class="caja">
+      <div class="sudadera">
+        <img src="./assets/images/featured1.png" alt="rojo">
+        <span class="agregar" id="cart-add">+</span>
+      </div>
+      <br>
+      <div class="text">
+        <h4>$14.00 <span class="stock">Stock: 1</span></h4>
+        <h5>Hoodies</h5>
+      </div>
+      <br>
+    </div>
+    <br>
+    <br>
+    <div class="caja">
+      <div class="sudadera">
+        <img src="./assets/images/featured2.png" alt="negro">
+        <span class="agregar" id="cart-add">+</span>
+      </div>
+      <br>
+      <div class="text">
+        <h4>$14.00 <span class="stock">Stock: 1</span></h4>
+        <h5>Hoodies</h5>
+      </div>
+    </div>
+    <br>
+    <br>
+    <div class="caja">
+      <div class="sudadera">
+        <img src="./assets/images/featured3.png" alt="blanco">
+        <span class="agregar" id="cart-add">+</span>
+      </div>
+      <br>
+      <div class="text">
+        <h4>$14.00 <span class="stock">Stock: 1</span></h4>
+        <h5>Hoodies</h5>
+      </div>
+    </div>
+  </section>
+  <!-- Cart -->
+  <div class="cart-container hide" id="cart-container">
+    <div class="cart" id="cart">
+      <div class="cart-close" id="close-cart">
+        <i class='bx bx-x bx-md'></i>
+      </div>
+
+      <div id="cart-content">
+
+      </div>
+    </div>
   </div>
+  <!-- Footer -->
+  <div class="footer">
+    <footer>
+      <h4 class="footer-tittle"> Our Information </h4>
+      <br>
+      <h5 class="footer-element"> Puebla-México </h5>
+      <br>
+      <h4 class="footer-tittle"> About Us </h4>
+      <br>
+      <h5 class="footer-element"> Support Center </h5>
+      <br>
+      <h5 class="footer-element"> Customer Support </h5>
+      <br>
+      <h5 class="footer-element"> About Us </h5>
+      <br>
+      <h5 class="footer-element"> Copyrigth </h5>
+      <br>
+      <h4 class="footer-tittle"> Product </h4>
+      <br>
+      <h5 class="footer-element"> Hoodies </h5>
+      <br>
+      <h5 class="footer-element"> Shirts </h5>
+      <br>
+      <h5 class="footer-element"> Sweatshirts </h5>
+      <br>
+      <h4 class="footer-tittle"> Social </h4>
+      <br>
+      <div class="social-media">
+        <a href="http://www.instagram.com"><img src="./assets/logos/instagram.svg"> </a>
+        <a href="http://www.twitter.com"><img src="./assets/logos/twitter.svg"> </a>
+      </div>
 
-
-    <script src="./assets/js/main.js"></script>
+    </footer>
+  </div>
+  <script src="./assets/js/main.js"></script>
 </body>
 </html>
