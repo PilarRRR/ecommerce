@@ -1,3 +1,9 @@
+// TODO: Agregar estilo sólido a navbar, basado en posición de ventana (scroll)
+// TODO: Agregar media queries
+// TODO: Agregar funcionalidad a elementos de My Cart
+// FIXME: Corregir estilos de texto de tema oscuro
+// FIXME: Mantener la proporción de la sudadera del landing
+
 const btnTheme = document.getElementById( "theme-btn" )
 const body = document.body
 const cartBtnOpen = document.getElementById("cart-btn")
@@ -112,13 +118,21 @@ function showProducts (){
     const content = document.getElementById( "cart-content" )
 
     let fragment = ""
-    cartProducts.forEach( product => {
+    cartProducts.forEach(product => {
         fragment += `
-        <section>
-            <h2>${product.name}</h2>
-            <p>Cantidad: ${product.quantity}</p>
+        <section class="cart-list-products">
+            <img src="${product.image}" class="cart-product-image" >
+            <div class="cart-product-text">
+                <h2>${product.name}</h2>
+                <p>Stock: 17 | $${product.price.toFixed(2)}</p>
+                <p>Subtotal: ${(product.quantity * product.price).toFixed(2)}</p>
+                <div class="cart-product-actions">
+                    <p>Cantidad: ${product.quantity}</p>
+                    <p>Quitar</p>
+                </div>
+            </div>
         </section>
-        `
+        `;
     } )
 
     content.innerHTML = fragment
