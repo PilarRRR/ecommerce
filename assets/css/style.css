@@ -135,8 +135,25 @@ section {
 .cart-product-text {
     display: flex;
     flex-direction: column;
-    gap: 8px;
+    gap: 6px;
     flex-grow: 2;
+}
+
+.cart-product-text-important {
+    color: red;
+    font-weight: 700;
+}
+
+.cart-product-quantity {
+    display: flex;
+    background-color: rgb(230, 230, 230);
+    padding: 4px;
+}
+
+.cart-product-btn {
+    border: 0;
+    width: 16px;
+    background-color: rgb(230, 230, 230);
 }
 
 .cart-product-actions {

@@ -124,10 +124,18 @@ function showProducts (){
             <img src="${product.image}" class="cart-product-image" >
             <div class="cart-product-text">
                 <h2>${product.name}</h2>
-                <p>Stock: 17 | $${product.price.toFixed(2)}</p>
-                <p>Subtotal: ${(product.quantity * product.price).toFixed(2)}</p>
+                <p>Stock: 17 | <span class="cart-product-text-important">$${product.price.toFixed(
+					2
+				)}</span></p>
+                <p class="cart-product-text-important">Subtotal: ${(
+					product.quantity * product.price
+				).toFixed(2)}</p>
                 <div class="cart-product-actions">
-                    <p>Cantidad: ${product.quantity}</p>
+                    <div class="cart-product-quantity">
+                        <button class="cart-product-btn">-</button>
+                        <p>${product.quantity} Units</p>
+                        <button class="cart-product-btn">+</button>
+                    </div>
                     <p>Quitar</p>
                 </div>
             </div>
