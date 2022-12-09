@@ -12,6 +12,8 @@ const cartAdd2 = document.getElementById("cart-add-2")
 const cartAdd3 = document.getElementById("cart-add-3")
 const cartAdd0 = document.getElementById("cart-add-0")
 const discoverBtn = document.getElementById("discover-btn")
+const totalItems = document.getElementById("totalItemsQuantity")
+const totalAmount = document.getElementById("totalItemsAmount")
 
 const darkThemeChange = () => {
 /*
@@ -101,6 +103,8 @@ function addProduct( itemId ){
     showProducts();
     // Actualiza el contador de productos en el carrito
     updateProductCounter();
+    // Actualiza el total
+    updateTotalAmount();
 }
 
 
@@ -133,6 +137,17 @@ function updateProductCounter() {
     }
     // Actualiza el texto del contador
     cartCounter.textContent = count;
+    totalItems.textContent = count;
+}
+
+/**
+ * @description Actualiza el total de costo del carrito
+ */
+function updateTotalAmount() {
+    // Calcula el total del carrito iterando sobre el carrito y multiplicando el precio de cada producto por la cantidad
+    const total = cartProducts.reduce((prev, curr) => prev + (curr.price * curr.quantity), 0);
+    // Actualiza el texto del total
+    totalAmount.textContent = total.toFixed(2);
 }
 
 //document -> documento
