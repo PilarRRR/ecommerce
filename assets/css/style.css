@@ -97,6 +97,46 @@ section {
     background-color: var(--container-color);
 }
 
+.cart-content {
+  margin-bottom: 80px;
+}
+
+.aside-title {
+  text-align: center;
+  font-weight: 700;
+  font-size: 24px;
+}
+
+.aside-text {
+  text-align: center;
+}
+
+.cart-bottom {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  margin: 8px;
+}
+
+.cart-total-container {
+  display: flex;
+  justify-content: space-between;
+  font-weight: 700;
+  width: 100%;
+  font-size: larger;
+  padding: 24px 0;
+}
+
+.checkout {
+  /* width: 80px; */
+  /* height: 36px; */
+  background-color: #cfcfcf;
+  border: none;
+  padding: 16px 24px;
+  color: rgb(88, 88, 88);
+  font-weight: 700;
+}
+
 .cart-container {
     background-color: rgba(109, 109, 109, 0.737);
     width: 100%;
