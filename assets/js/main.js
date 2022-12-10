@@ -1,6 +1,7 @@
 // TODO: Agregar estilo sólido a navbar, basado en posición de ventana (scroll)
 // TODO: Agregar media queries
-// TODO: Agregar funcionalidad a elementos de My Cart
+// TODO: Mostrar detalles de producto dinámicamente
+// FIXME: Mostrar datos del carrito dinámicamente
 // FIXME: Corregir estilos de texto de tema oscuro
 // FIXME: Mantener la proporción de la sudadera del landing
 
@@ -20,6 +21,8 @@ const cartAdd0 = document.getElementById("cart-add-0")
 const discoverBtn = document.getElementById("discover-btn")
 const totalItems = document.getElementById("totalItemsQuantity")
 const totalAmount = document.getElementById("totalItemsAmount")
+const cartItemsMinus = []
+const cartItemsPlus = []
 
 const darkThemeChange = () => {
 /*
@@ -40,6 +43,31 @@ const darkThemeChange = () => {
     body.classList.toggle( "dark" )
 }
 
+const cartProductsContainer = document.getElementById("cart")
+
+  // Click handler for entire DIV container
+  cartProductsContainer.addEventListener('click', function (e) {
+		// But only alert for elements that have an alert-button class
+		if (e.target.id.includes('cartItemPlus')) {
+            const productId = Number(e.target.id[e.target.id.length - 1]);
+            editCartProduct(productId)
+		} else if(e.target.id.includes('cartItemMinus')) {
+            const productId = Number(e.target.id[e.target.id.length - 1]);
+            editCartProduct(productId, 'less')
+        } else if (e.target.id.includes('cartItemRemove')) {
+			const productId = Number(e.target.id[e.target.id.length - 1]);
+			const cartProductIndex = cartProducts.findIndex(
+				(cartProduct) => cartProduct.id === productId
+			);
+			cartProducts.splice(cartProductIndex, 1);
+			// Actualiza la vista de productos en el carrito
+			showProducts();
+			// Actualiza el contador de productos en el carrito
+			updateProductCounter();
+			// Actualiza el total
+			updateTotalAmount();
+		}
+  });
 
 btnTheme.addEventListener( "click", () => darkThemeChange())
 
@@ -47,10 +75,10 @@ cartBtnOpen.addEventListener( "click", () => cartContainer.classList.remove("hid
 
 cartBtnClose.addEventListener( "click", () => cartContainer.classList.add("hide")  )
 
-cartAdd1.addEventListener("click", () => addProduct(1));
-cartAdd2.addEventListener("click", () => addProduct(2));
-cartAdd3.addEventListener("click", () => addProduct(3));
-cartAdd0.addEventListener("click", () => addProduct(2));
+cartAdd1.addEventListener("click", () => editCartProduct(1));
+cartAdd2.addEventListener("click", () => editCartProduct(2));
+cartAdd3.addEventListener("click", () => editCartProduct(3));
+cartAdd0.addEventListener("click", () => editCartProduct(2));
 discoverBtn.addEventListener("click", () => window.scrollTo(0, 800));
 
 const items = [
@@ -88,16 +116,25 @@ cartCounter.innerText = cartProducts.length;
  * @description Agrega un producto al carrito
  * @param {*} itemId Id del producto que se agregará al carrito
  */
-function addProduct( itemId ){
+function editCartProduct( itemId, operation = 'add' ){
     const productSelected = items.find(product => product.id === itemId);
     const stock = productSelected.quantity;
     const cartProductIndex = cartProducts.findIndex(product => product.id == itemId);
     // Si existe en el carrito
     if(cartProductIndex != -1) {
-        // Si no ha rebasado el stock
-        if(cartProducts[cartProductIndex].quantity < stock) {
-            // Aumenta la cantidad del producto en el carrito
-            cartProducts[cartProductIndex].quantity++;
+        if(operation === 'add') {
+            // Si no ha rebasado el stock
+            if(cartProducts[cartProductIndex].quantity < stock) {
+                // Aumenta la cantidad del producto en el carrito
+                cartProducts[cartProductIndex].quantity++;
+            }
+        } else {
+            // Si es mayor que 0
+            if(cartProducts[cartProductIndex].quantity > 1) {
+                cartProducts[cartProductIndex].quantity--;
+            } else {
+                cartProducts.splice(cartProductIndex, 1)
+            }
         }
     } else {
         // Crea una copia del producto seleccionado cambiando la cantidad (a 1)
@@ -118,31 +155,42 @@ function showProducts (){
     const content = document.getElementById( "cart-content" )
 
     let fragment = ""
-    cartProducts.forEach(product => {
-        fragment += `
-        <section class="cart-list-products">
-            <img src="${product.image}" class="cart-product-image" >
-            <div class="cart-product-text">
-                <h2>${product.name}</h2>
-                <p>Stock: 17 | <span class="cart-product-text-important">$${product.price.toFixed(
-					2
-				)}</span></p>
-                <p class="cart-product-text-important">Subtotal: ${(
-					product.quantity * product.price
-				).toFixed(2)}</p>
-                <div class="cart-product-actions">
-                    <div class="cart-product-quantity">
-                        <button class="cart-product-btn">-</button>
-                        <p>${product.quantity} Units</p>
-                        <button class="cart-product-btn">+</button>
+    if(cartProducts.length > 0) {
+        cartProducts.forEach(product => {
+            fragment += `
+            <section class="cart-list-products">
+                <img src="${product.image}" class="cart-product-image" >
+                <div class="cart-product-text">
+                    <h2>${product.name}</h2>
+                    <p>Stock: 17 | <span class="cart-product-text-important">$${product.price.toFixed(
+						2
+					)}</span></p>
+                    <p class="cart-product-text-important">Subtotal: ${(
+						product.quantity * product.price
+					).toFixed(2)}</p>
+                    <div class="cart-product-actions">
+                        <div class="cart-product-quantity">
+                            <button class="cart-product-btn" id="cartItemMinus${
+								product.id
+							}">-</button>
+                            <p>${product.quantity} Units</p>
+                            <button class="cart-product-btn" id="cartItemPlus${
+								product.id
+							}">+</button>
+                        </div>
+                        <p id="cartItemRemove${product.id}">Quitar</p>
                     </div>
-                    <p>Quitar</p>
                 </div>
-            </div>
-        </section>
+            </section>
+            `;
+        } )
+    } else {
+        fragment += `
+            <img src="./assets/images/empty-cart.png" alt="empty cart image">
+            <p class="aside-subtitle">Your cart is empty</p>
+            <p class="aside-text">You can add items to your cart by clicking on the + button on the product page.</p>
         `;
-    } )
-
+    }
     content.innerHTML = fragment
 }
 
